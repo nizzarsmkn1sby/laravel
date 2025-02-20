@@ -1,4 +1,3 @@
-
 <?php
 
 use Illuminate\Database\Migrations\Migration;
@@ -12,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('courts', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('court_type_id');
-            $table->foreign('court_type_id')->references('id')->on('court_types');
-            $table->text('name');
-            $table->integer('price');
             $table->timestamps();
         });
     }
@@ -27,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('courts');
+        Schema::dropIfExists('projects');
     }
 };
